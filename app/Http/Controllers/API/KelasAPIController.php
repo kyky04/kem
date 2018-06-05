@@ -36,10 +36,7 @@ class KelasAPIController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $this->kelasRepository->pushCriteria(new RequestCriteria($request));
-        $this->kelasRepository->pushCriteria(new LimitOffsetCriteria($request));
-        $kelas = $this->kelasRepository->all();
-
+        $kelas = Kelas::all();
         return $this->sendResponse($kelas->toArray(), 'Kelas retrieved successfully');
     }
 
