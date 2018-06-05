@@ -43,6 +43,14 @@ class JawabanAPIController extends AppBaseController
         return $this->sendResponse($jawabans->toArray(), 'Jawabans retrieved successfully');
     }
 
+    public function indexBySoal(Request $request)
+    {   
+        $id_soal = $request->id_soal;
+        $jawabans = Jawaban::where('id_soal',$id_soal)->get();
+
+        return $this->sendResponse($jawabans->toArray(), 'Jawabans retrieved successfully');
+    }
+
     /**
      * Store a newly created Jawaban in storage.
      * POST /jawabans

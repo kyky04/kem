@@ -24,6 +24,7 @@ Route::resource('soals', 'SoalAPIController');
 Route::get('soals-kelas', 'SoalAPIController@indexByKelas');
 
 Route::resource('jawabans', 'JawabanAPIController');
+Route::post('jawaban-soal', 'JawabanAPIController@indexBySoal');
 
 Route::resource('siswas', 'SiswaAPIController');
 Route::get('siswas-kelas', 'SiswaAPIController@indexByKelas');
