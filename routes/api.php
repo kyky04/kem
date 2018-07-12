@@ -38,5 +38,6 @@ Route::post('login', 'LoginController@login');
 Route::post('login-admin', 'LoginController@loginAdmin');
 
 Route::get('skors-siswa', 'SkorAPIController@skorSiswa');
+Route::get('skors-saya', 'SkorAPIController@skorSaya');
 
 Route::resource('admins', 'AdminAPIController');

@@ -51,6 +51,14 @@ class SkorAPIController extends AppBaseController
         return $this->sendResponse($skors->toArray(), 'Skors retrieved successfully');
     }
 
+    public function skorSaya(Request $request)
+    {   
+        $id_siswa = $request->get('id_siswa');
+        $skors = Skor::with('soal')->with('siswa')->where('id_siswa',$id_siswa)->get();
+
+        return $this->sendResponse($skors->toArray(), 'Skors retrieved successfully');
+    }
+
     /**
      * Store a newly created Skor in storage.
      * POST /skors
